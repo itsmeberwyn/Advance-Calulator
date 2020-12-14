@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09 25, 20, 4:35:38 PM
+    Author     : XkamoteX
+*/
+
+
+.textFieldInput{
+    -fx-background-color: transparent;
+    -fx-text-fill: #21181b;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-display-caret: false;
+}
+
+.aboutPane{
+    -fx-background-color: #f0b541;
+}
+.instructionPane{
+    -fx-background-color: #f0b541;
+}
+.scroll-pane > .viewport {
+    -fx-background-color: #f0b541;
+    -fx-font-size: 17;
+}
+.menu-bar {
+    -fx-background-color: #f0b541;
+}
+.menu-button:hover {
+    -fx-background-color: #21181b;
+}
+.menu-item {
+    -fx-text-fill: #fff;
+    -fx-background-color: #f0b541;
+}
+.menu-item:hover {
+    -fx-background-color: #21181b;
+}

@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="357.0" style="-fx-background-color: #f0b541;" styleClass="backGround" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="advancecalc.CalculatorInterface">
+   <children>
+      <ImageView fitHeight="553.0" fitWidth="362.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../UI/calcback.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="192.0" fitWidth="362.0" pickOnBounds="true" preserveRatio="true" y="25.0">
+         <image>
+            <Image url="@../UI/screen.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutY="162.0" prefHeight="553.0" prefWidth="357.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar prefHeight="25.0" prefWidth="362.0" stylesheets="@../calculator/css/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <menus>
+                  <Menu fx:id="menuBarAdvance" mnemonicParsing="false" text="Mode">
+                     <items>
+                        <MenuItem fx:id="menuQuadratic1" mnemonicParsing="false" onAction="#onClickMenuQuadratic" text="Quadratic Equation" />
+                        <MenuItem fx:id="menuRight1" mnemonicParsing="false" onAction="#onClickMenuRight" text="Right Angle" />
+                        <MenuItem fx:id="menuPerCom3" mnemonicParsing="false" onAction="#onClickMenuPerCom" text="nPr / nCr" />
+                     </items>
+                  </Menu>
+                <Menu fx:id="menuBarQuadratic" mnemonicParsing="false" text="Mode" visible="false">
+                  <items>
+                        <MenuItem fx:id="menuAdvance" mnemonicParsing="false" onAction="#onClickMenuAdvance" text="Advance" />
+                        <MenuItem fx:id="menuRight" mnemonicParsing="false" onAction="#onClickMenuRight" text="Right Angle" />
+                        <MenuItem fx:id="menuPerCom2" mnemonicParsing="false" onAction="#onClickMenuPerCom" text="nPr / nCr" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="menuBarRight" mnemonicParsing="false" text="Mode" visible="false">
+                     <items>
+                        <MenuItem fx:id="menuAdvance" mnemonicParsing="false" onAction="#onClickMenuAdvance" text="Advance" />
+                        <MenuItem fx:id="menuQuadratic2" mnemonicParsing="false" onAction="#onClickMenuQuadratic" text="Quadratic Equation" />
+                        <MenuItem fx:id="menuPerCom1" mnemonicParsing="false" onAction="#onClickMenuPerCom" text="nPr / nCr" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menuBarPerCom" mnemonicParsing="false" text="Mode" visible="false">
+                     <items>
+                        <MenuItem fx:id="menuAdvance1" mnemonicParsing="false" onAction="#onClickMenuAdvance" text="Advance" />
+                        <MenuItem fx:id="menuQuadratic21" mnemonicParsing="false" onAction="#onClickMenuQuadratic" text="Quadratic Equation" />
+                        <MenuItem fx:id="menuRight11" mnemonicParsing="false" onAction="#onClickMenuRight" text="Right Angle" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem fx:id="menuAbout" mnemonicParsing="false" onAction="#onClickMenuAbout" text="About" />
+                        <MenuItem fx:id="menuInstruction" mnemonicParsing="false" onAction="#onClickMenuInstruction" text="Instruction" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <TextField fx:id="inputProblem" alignment="BOTTOM_RIGHT" editable="false" layoutX="29.0" layoutY="74.0" prefHeight="68.0" prefWidth="310.0" styleClass="textFieldInput" stylesheets="@../calculator/css/style.css" AnchorPane.bottomAnchor="411.0" AnchorPane.topAnchor="74.0">
+               <padding>
+                  <Insets bottom="1.0" right="3.0" />
+               </padding>
+            </TextField>
+            <Label fx:id="ResultLabel" alignment="CENTER_RIGHT" layoutX="51.0" layoutY="36.0" prefHeight="38.0" prefWidth="288.0" AnchorPane.bottomAnchor="479.0" AnchorPane.topAnchor="36.0">
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Pane fx:id="AdvancePane" layoutX="1.0" layoutY="180.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="357.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="180.0">
+               <children>
+                  <Button fx:id="btn1" alignment="TOP_CENTER" layoutX="129.0" layoutY="255.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickOne" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle4.css" text="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnAns" alignment="TOP_CENTER" layoutX="243.0" layoutY="312.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickAns" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle3.css" text="Ans">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn0" alignment="TOP_CENTER" layoutX="186.0" layoutY="312.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickZero" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle4.css" text="0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn2" alignment="TOP_CENTER" layoutX="186.0" layoutY="255.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickTwo" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle4.css" text="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn3" alignment="TOP_CENTER" layoutX="243.0" layoutY="255.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickThree" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle4.css" text="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn4" alignment="TOP_CENTER" layoutX="129.0" layoutY="195.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickFour" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle4.css" text="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn5" alignment="TOP_CENTER" layoutX="186.0" layoutY="195.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickFive" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle4.css" text="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn6" alignment="TOP_CENTER" layoutX="243.0" layoutY="195.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickSix" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle4.css" text="6">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn7" alignment="TOP_CENTER" layoutX="129.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickSeven" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle4.css" text="7">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn8" alignment="TOP_CENTER" layoutX="186.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickEight" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle4.css" text="8">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btn9" alignment="TOP_CENTER" layoutX="243.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickNine" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle4.css" text="9">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnDel" alignment="CENTER" layoutX="129.0" layoutY="78.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickDel" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="Del">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Button fx:id="btnPlus" alignment="TOP_CENTER" layoutX="300.0" layoutY="255.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickAdd" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="+">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnProd" alignment="TOP_CENTER" layoutX="300.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickProd" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="x">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnQuo" alignment="TOP_CENTER" layoutX="300.0" layoutY="78.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickQuo" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="/">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnDot" alignment="TOP_CENTER" layoutX="129.0" layoutY="312.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickDot" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text=".">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnEqual" alignment="TOP_CENTER" layoutX="300.0" layoutY="312.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickEqual" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle2.css" text="=">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSub" alignment="TOP_CENTER" layoutX="300.0" layoutY="195.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickSub" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="-">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnClear" alignment="CENTER" layoutX="186.0" layoutY="78.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickClear" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="AC">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnNegative" alignment="CENTER" layoutX="243.0" layoutY="78.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickNegative" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="+/-">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnFloor" alignment="CENTER" layoutX="300.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickFloor" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="FLR">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnCeil" alignment="CENTER" layoutX="243.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickCeil" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="CEIL">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnModulo" alignment="CENTER" layoutX="186.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickModulo" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="Mod">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnFactorial" alignment="TOP_CENTER" layoutX="129.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickFactorial" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="N!">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSqrt" alignment="TOP_CENTER" layoutX="71.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickSqrt" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="√">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnCbrt" alignment="TOP_CENTER" layoutX="71.0" layoutY="78.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickCbrt" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="∛">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSigma" alignment="TOP_CENTER" layoutX="71.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickSigma" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="Σ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnPi" alignment="TOP_CENTER" layoutX="71.0" layoutY="195.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickProduct" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="Π">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnLog" alignment="TOP_CENTER" layoutX="12.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickLog" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="log">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnExponent" alignment="TOP_CENTER" layoutX="12.0" layoutY="78.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickExpo" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="^">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnNestedPi" alignment="CENTER" layoutX="12.0" layoutY="195.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickNestedProduct" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="Π Π" />
+                  <Button fx:id="btnNestedSigma" alignment="CENTER" layoutX="12.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickNestedSigma" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="Σ Σ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnA" alignment="TOP_CENTER" layoutX="12.0" layoutY="255.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickA" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="a">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSET" alignment="TOP_CENTER" layoutX="12.0" layoutY="312.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickSet" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="SET">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnB" alignment="TOP_CENTER" layoutX="71.0" layoutY="255.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickB" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="b">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnC" alignment="TOP_CENTER" layoutX="71.0" layoutY="312.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onClickC" prefHeight="50.0" prefWidth="50.0" style="-fx-font-weight: bold;" stylesheets="@../calculator/css/buttonStyle.css" text="c">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Label fx:id="OutPutLabel" alignment="CENTER_RIGHT" layoutX="26.0" layoutY="142.0" prefHeight="38.0" prefWidth="310.0">
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Pane fx:id="SigmaPane" layoutX="-1.0" layoutY="45.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="123.0" prefWidth="357.0" visible="false">
+               <children>
+                  <Label layoutX="46.0" layoutY="14.0" prefHeight="95.0" prefWidth="33.0" text="Σ">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="49.0" layoutY="17.0" text="a=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="49.0" layoutY="89.0" text="b=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="79.0" layoutY="51.0" text="c=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="sigmaA" disable="true" editable="false" layoutX="66.0" layoutY="12.0" prefHeight="25.0" prefWidth="33.0" />
+                  <TextField fx:id="sigmaC" disable="true" editable="false" layoutX="95.0" layoutY="49.0" prefHeight="25.0" prefWidth="33.0" />
+                  <TextField fx:id="sigmaB" disable="true" editable="false" layoutX="67.0" layoutY="87.0" prefHeight="25.0" prefWidth="33.0" />
+                  <Label fx:id="sigmaOutput" layoutX="246.0" layoutY="53.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="sigmaOutput1" layoutX="191.0" layoutY="53.0" text="OUTPUT: ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="ProductPane" layoutX="-1.0" layoutY="43.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="123.0" prefWidth="357.0" visible="false">
+               <children>
+                  <Label layoutX="44.0" layoutY="14.0" prefHeight="95.0" prefWidth="33.0" text="Π">
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="49.0" layoutY="17.0" text="a=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="49.0" layoutY="89.0" text="b=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="79.0" layoutY="51.0" text="c=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="productA" disable="true" editable="false" layoutX="66.0" layoutY="12.0" prefHeight="25.0" prefWidth="33.0" />
+                  <TextField fx:id="productC" disable="true" editable="false" layoutX="95.0" layoutY="49.0" prefHeight="25.0" prefWidth="33.0" />
+                  <TextField fx:id="productB" disable="true" editable="false" layoutX="67.0" layoutY="87.0" prefHeight="25.0" prefWidth="33.0" />
+                  <Label fx:id="productOutput" layoutX="246.0" layoutY="53.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="productOutput1" layoutX="191.0" layoutY="53.0" text="OUTPUT: ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="NSigmaPane" layoutX="-1.0" layoutY="43.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="123.0" prefWidth="357.0" visible="false">
+               <children>
+                  <Label layoutX="53.0" layoutY="14.0" prefHeight="95.0" prefWidth="33.0" text="Σ">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="17.0" text="a1=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="89.0" text="b1=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="138.0" layoutY="51.0" text="c=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="sigmaNA1" disable="true" editable="false" layoutX="59.0" layoutY="12.0" prefHeight="25.0" prefWidth="33.0" />
+                  <TextField fx:id="sigmaNC1" disable="true" editable="false" layoutX="154.0" layoutY="49.0" prefHeight="25.0" prefWidth="33.0" />
+                  <TextField fx:id="sigmaNB1" disable="true" editable="false" layoutX="60.0" layoutY="87.0" prefHeight="25.0" prefWidth="33.0" />
+                  <Label fx:id="NsigmaOutput" layoutX="266.0" layoutY="53.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="100.0" layoutY="14.0" prefHeight="95.0" prefWidth="33.0" text="Σ">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="93.0" layoutY="17.0" text="a2=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="sigmaNA2" disable="true" editable="false" layoutX="117.0" layoutY="12.0" prefHeight="25.0" prefWidth="33.0" />
+                  <Label layoutX="95.0" layoutY="89.0" text="b2=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="sigmaNB2" disable="true" editable="false" layoutX="120.0" layoutY="87.0" prefHeight="25.0" prefWidth="33.0" />
+                  <Label fx:id="NsigmaOutput1" layoutX="211.0" layoutY="53.0" text="OUTPUT: ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="NProductPane" layoutX="-1.0" layoutY="43.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="123.0" prefWidth="357.0" visible="false">
+               <children>
+                  <Label layoutX="53.0" layoutY="14.0" prefHeight="95.0" prefWidth="33.0" text="Π">
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="33.0" layoutY="18.0" text="a1=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="29.0" layoutY="85.0" text="b1=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="138.0" layoutY="51.0" text="c=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="productNA1" disable="true" editable="false" layoutX="57.0" layoutY="13.0" prefHeight="25.0" prefWidth="33.0" />
+                  <TextField fx:id="productNC1" disable="true" editable="false" layoutX="154.0" layoutY="49.0" prefHeight="25.0" prefWidth="33.0" />
+                  <TextField fx:id="productNB1" disable="true" editable="false" layoutX="54.0" layoutY="83.0" prefHeight="25.0" prefWidth="33.0" />
+                  <Label fx:id="NproductOutput" layoutX="266.0" layoutY="53.0">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="100.0" layoutY="14.0" prefHeight="95.0" prefWidth="33.0" text="Π">
+                     <font>
+                        <Font size="44.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="91.0" layoutY="18.0" text="a2=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="productNA2" disable="true" editable="false" layoutX="115.0" layoutY="13.0" prefHeight="25.0" prefWidth="33.0" />
+                  <Label layoutX="89.0" layoutY="85.0" text="b2=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="productNB2" disable="true" editable="false" layoutX="114.0" layoutY="83.0" prefHeight="25.0" prefWidth="33.0" />
+                  <Label fx:id="NproductOutput1" layoutX="211.0" layoutY="53.0" text="OUTPUT: ">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="quadraticEquationPane" layoutX="20.0" layoutY="33.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="123.0" prefWidth="318.0" visible="false">
+               <children>
+                  <Label layoutX="25.0" layoutY="62.0" text="a=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="89.0" layoutY="64.0" text="b=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="156.0" layoutY="64.0" text="c=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="varA" disable="true" editable="false" layoutX="49.0" layoutY="61.0" prefHeight="25.0" prefWidth="33.0" />
+                  <TextField fx:id="varC" disable="true" editable="false" layoutX="179.0" layoutY="62.0" prefHeight="25.0" prefWidth="33.0" />
+                  <TextField fx:id="varB" disable="true" editable="false" layoutX="114.0" layoutY="63.0" prefHeight="25.0" prefWidth="33.0" />
+                  <Label layoutX="17.0" layoutY="13.0" prefHeight="25.0" prefWidth="131.0" text="Quadratic Equation">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="resultQuadratic" layoutX="70.0" layoutY="97.0" prefHeight="25.0" prefWidth="186.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="resultQuadratic1" layoutX="25.0" layoutY="97.0" prefHeight="25.0" prefWidth="61.0" text="Result:  ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="rightTrianglePane" layoutX="14.0" layoutY="33.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="123.0" prefWidth="357.0" visible="false">
+               <children>
+                  <Label layoutX="25.0" layoutY="62.0" text="a=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="24.0" layoutY="99.0" text="b=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="varATR" disable="true" editable="false" layoutX="49.0" layoutY="61.0" prefHeight="25.0" prefWidth="101.0" />
+                  <TextField fx:id="varBTR" disable="true" editable="false" layoutX="49.0" layoutY="97.0" prefHeight="25.0" prefWidth="101.0" />
+                  <Label layoutX="17.0" layoutY="13.0" prefHeight="25.0" prefWidth="131.0" text="Right Triangle">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="resultRightTriangle" layoutX="212.0" layoutY="74.0" prefHeight="25.0" prefWidth="101.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="162.0" layoutY="74.0" prefHeight="25.0" prefWidth="50.0" text="Result:  ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="ComPerPane" layoutX="-1.0" layoutY="23.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="166.0" prefWidth="357.0" visible="false">
+               <children>
+                  <Label layoutX="103.0" layoutY="66.0" text="n=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="200.0" layoutY="65.0" text="r=">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="varN" disable="true" editable="false" layoutX="124.0" layoutY="62.0" prefHeight="25.0" prefWidth="33.0" />
+                  <TextField fx:id="varR" disable="true" editable="false" layoutX="215.0" layoutY="61.0" prefHeight="25.0" prefWidth="33.0" />
+                  <Label layoutX="35.0" layoutY="20.0" prefHeight="25.0" prefWidth="203.0" text="Permutation and Combination">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="resultComPer" layoutX="154.0" layoutY="127.0" prefHeight="25.0" prefWidth="101.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="106.0" layoutY="127.0" prefHeight="25.0" prefWidth="50.0" text="Result:  ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelIndicator" layoutX="165.0" layoutY="44.0" prefHeight="50.0" prefWidth="33.0" text="P">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <ToggleButton fx:id="btnCom" layoutX="178.0" layoutY="97.0" mnemonicParsing="false" onAction="#onClickCombination" prefHeight="25.0" prefWidth="33.0" text="C" />
+                  <ToggleButton fx:id="btnPer" layoutX="145.0" layoutY="97.0" mnemonicParsing="false" onAction="#onClickPermutation" prefHeight="25.0" prefWidth="33.0" selected="true" text="P" />
+               </children>
+            </Pane>
+            <Pane fx:id="aboutPane" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="357.0" styleClass="aboutPane" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+               <children>
+                  <ScrollPane prefHeight="529.0" prefWidth="373.0">
+                    <content>
+                      <AnchorPane minHeight="494.0" minWidth="362.0" prefHeight="494.0" prefWidth="362.0">
+                           <children>
+                              <Label fx:id="aboutLabel" alignment="TOP_LEFT" prefHeight="482.0" prefWidth="346.0" text="Label">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <Button layoutX="326.0" layoutY="15.0" mnemonicParsing="false" onAction="#onClickExitAbout" text="X" />
+               </children>
+            </Pane>
+            <Pane fx:id="instructionPane" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="357.0" styleClass="instructionPane" visible="false">
+               <children>
+                  <ScrollPane prefHeight="490.0" prefWidth="382.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="362.0">
+                           <children>
+                              <Label fx:id="instructionLabel" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="800.0" prefWidth="345.0" text="Label">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <Button layoutX="326.0" layoutY="15.0" mnemonicParsing="false" onAction="#onClickExitInstruction" text="X" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="ttlScrn" fitHeight="553.0" fitWidth="362.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../UI/calcback1.gif" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnStart" layoutX="99.0" layoutY="387.0" mnemonicParsing="false" onAction="#hideTtlscrn" prefHeight="120.0" prefWidth="160.0" stylesheets="@../calculator/css/buttonStyleStrt.css" />
+   </children>
+</AnchorPane>
